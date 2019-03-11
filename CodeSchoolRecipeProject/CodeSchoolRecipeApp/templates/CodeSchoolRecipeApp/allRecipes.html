@@ -1,0 +1,28 @@
+{% extends 'CodeSchoolRecipeApp/base.html' %}
+
+{% block header %}
+All Recipes
+{% endblock header %}
+
+{% block content %}
+
+{% if recipe_list %}
+
+{% for eachItem in recipe_list %}
+<h2>{{ eachItem.nameOfMeal }}</h2>
+<p>{{ eachItem.shortDescription }}</p>
+<p>{{ eachItem.ingredients }}</p>
+<p>{{ eachItem.directions }}</p>
+<p>{{ eachItem.mealPicture }}</p>
+<p>{{ eachItem.dateCreated}}</p>
+
+{% if perms.CodeSchoolRecipeApp.delete_recipe %}
+<p><a href="#"> Delete? </a></p>
+
+{% endif %}
+{% endfor %}
+
+{% else %}
+<p>No Recipes Available.</p>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create User</title>
+</head>
+<body>
+
+<h1>Create Users Here</h1>
+<form method="POST">
+    {{ userform.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Submit"></form>
+
+
+</body>
+</html>

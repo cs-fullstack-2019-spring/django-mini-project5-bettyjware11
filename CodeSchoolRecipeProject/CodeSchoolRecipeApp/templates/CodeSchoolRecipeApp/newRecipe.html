@@ -1,0 +1,12 @@
+{% extends 'CodeSchoolRecipeApp/base.html' %}
+
+{% block content %}
+
+<form action="{% url 'newRecipe' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Submit</button>
+</form>
+
+
+{% endblock content %}

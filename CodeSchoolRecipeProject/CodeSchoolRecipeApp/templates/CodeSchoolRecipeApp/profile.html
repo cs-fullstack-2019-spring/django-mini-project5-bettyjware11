@@ -1,0 +1,31 @@
+{% extends 'CodeSchoolRecipeApp/base.html' %}
+
+{% block content %}
+
+<h1>Profile Page</h1>
+{{ user.username }}
+
+{% if user.is_authenticated %}
+<p><a href="{% url 'editUser' username  %}">Edit User Info</a></p>
+<p><a href="{% url 'logout' %}">Log Out</a></p>
+
+{# If they do have entries #}
+{% if allEntries %}
+<ul>
+    {% for eachEntry in allEntries %}
+    <li>{{ eachEntry.username }} <a href="{% url 'editUser' eachEntry.username %}">Edit</a>
+    {{eachEntry.emailAddress}} {{eachEntry.profilePicture}}</li>
+    {% endfor %}
+</ul>
+
+{# If they don't have a profile. #}
+{% else %}
+<h2>Create a profile!!!!!!!!!!</h2>
+{% endif %}
+
+{# This is for users not logged in #}
+{% else %}
+<p><a href="{% url 'createUser' %}">Create a user</a> or</p>
+<p><a href="{% url 'login' %}">Log in</a></p>
+{% endif %}
+{% endblock content %}
