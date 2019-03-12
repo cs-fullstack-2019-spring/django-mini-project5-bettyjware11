@@ -34,3 +34,5 @@ The profile page should allow you to edit the logged in users:
 
 ## Challenge
 Include a delete button
+<hr>
+2 point. Can't add a user or recipe. Images are not present in the all reciepe page. Profile page is not present.
